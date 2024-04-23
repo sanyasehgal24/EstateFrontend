@@ -9,9 +9,9 @@ export const SocketContextProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
 
 
-  const port = process.env.PORT || 4000;
+ // const port = process.env.PORT || 4000;
   useEffect(() => {
-    setSocket(io(port));
+    setSocket(io("http://0.0.0.0:4000"));
   }, []);
 
   useEffect(() => {
