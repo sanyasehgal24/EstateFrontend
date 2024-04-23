@@ -12,7 +12,7 @@ export default defineConfig({
             return 'vendor';
           }
         },
-        chunkSizeWarningLimit: 1,
+        chunkSizeWarningLimit: 1000,
       },
     },
   },
