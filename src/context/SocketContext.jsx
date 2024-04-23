@@ -8,8 +8,10 @@ export const SocketContextProvider = ({ children }) => {
   const { currentUser } = useContext(AuthContext);
   const [socket, setSocket] = useState(null);
 
+
+  const port = process.env.PORT || 4000;
   useEffect(() => {
-    setSocket(io("http://localhost:4000"));
+    setSocket(io(port));
   }, []);
 
   useEffect(() => {
