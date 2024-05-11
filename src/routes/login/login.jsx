@@ -27,6 +27,8 @@ function Login() {
         password,
       });
    // localStorage.setItem("user", JSON.stringify(res.data));
+   console.log(res, "done");
+   localStorage.setItem("usertoken", res.data.token);
        updateUser(res.data)
 
       navigate("/");

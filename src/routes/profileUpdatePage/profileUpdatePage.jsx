@@ -17,14 +17,15 @@ function ProfileUpdatePage() {
     const formData = new FormData(e.target);
 
     const { username, email, password } = Object.fromEntries(formData);
-
+  const usertoken  = localStorage.getItem("usertoken");
     try {
-      const res = await apiRequest.put(`/users/${currentUser.id}`, {
+      const res = await apiRequest.put(`/users/${currentUser.id}?token=${usertoken}`, {
         username,
         email,
         password,
         avatar:avatar[0]
       });
+      
       updateUser(res.data);
       navigate("/profile");
     } catch (err) {
